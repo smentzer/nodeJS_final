@@ -35,16 +35,7 @@ app.get("/", (req, res) => {
 
 
 //POST METHOD
-app.post('/',async (req, res) => {
+app.post('/' ,(req, res) => {
+  console.log(req.body);
+});
 
-  //add button inserts new data in db
-  const todoTask = new TodoTask({
-  content: req.body.content
-  });
-  try {
-  await todoTask.save();
-  res.redirect("/");
-  } catch (err) {
-  res.redirect("/");
-  }
-  });
