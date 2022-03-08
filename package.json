@@ -1,0 +1,28 @@
+{
+  "name": "nodejs_todo-list",
+  "version": "1.0.0",
+  "description": "toDO list, node api",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/smentzer/nodeJS_toDo-list.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/smentzer/nodeJS_toDo-list/issues"
+  },
+  "homepage": "https://github.com/smentzer/nodeJS_toDo-list#readme",
+  "dependencies": {
+    "dotenv": "^16.0.0",
+    "ejs": "^3.1.6",
+    "express": "^4.17.3",
+    "mongoose": "^6.2.4"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}
