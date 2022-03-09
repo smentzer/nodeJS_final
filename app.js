@@ -29,12 +29,34 @@ app.set("view engine", "ejs");
 
 
 // GET METHOD
-app.get("/", (req, res) => {
+/*app.get("/", (req, res) => {
   res.render("todo.ejs");
+  });
+  */
+ // GET METHOD 
+app.get("/", (req, res) => {
+  TodoTask.find({}, (err, tasks) => {
+  res.render("todo.ejs", { todoTasks: tasks });
+  });
   });
 
 
 //POST METHOD
+/*
 app.post('/', (req, res) => {
   console.log(req.body);
+  });
+  */
+
+//POST METHOD
+app.post('/',async (req, res) => {
+  const todoTask = new TodoTask({
+  content: req.body.content
+  });
+  try {
+  await todoTask.save();
+  res.redirect("/");
+  } catch (err) {
+  res.redirect("/");
+  }
   });
